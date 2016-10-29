@@ -28,10 +28,10 @@ void setState(int val){
 int ctr = 0; 
 const float pi = 3.1415926535;
 float val=0.0;
+int delayNum = 10;
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int delayNum=10;
   val = sin(ctr * pi / 100)+1;
   ctr++;
   delay(delayNum);
