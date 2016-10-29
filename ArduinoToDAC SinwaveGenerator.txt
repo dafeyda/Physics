@@ -1,3 +1,6 @@
+//This code uses 8 output pins on the arduino to control the output current on a Digital to Analog Converter (DAC). Each pin controls a 
+// small amount of current. By properly turning each switch on the DAC on and off at a given time, I can produce a sin wave output. 
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(2, OUTPUT);
