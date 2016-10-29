@@ -1,0 +1,36 @@
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
+}
+
+void setState(int val){
+   digitalWrite(2, ((bitRead(val, 0)==1) ? HIGH : LOW));
+   digitalWrite(3, ((bitRead(val, 1)==1) ? HIGH : LOW));
+   digitalWrite(4, ((bitRead(val, 2)==1) ? HIGH : LOW));
+   digitalWrite(5, ((bitRead(val, 3)==1) ? HIGH : LOW));
+   digitalWrite(6, ((bitRead(val, 4)==1) ? HIGH : LOW));
+   digitalWrite(7, ((bitRead(val, 5)==1) ? HIGH : LOW));
+   digitalWrite(8, ((bitRead(val, 6)==1) ? HIGH : LOW));
+   digitalWrite(9, ((bitRead(val, 7)==1) ? HIGH : LOW));
+  
+}
+int ctr = 0; 
+const float pi = 3.1415926535;
+float val=0.0;
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int delayNum=10;
+  val = sin(ctr * pi / 100)+1;
+  ctr++;
+  delay(delayNum);
+  setState((int)(127*val));
+}
